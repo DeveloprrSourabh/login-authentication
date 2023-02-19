@@ -2,7 +2,7 @@
 session_start();
 if(!$_SESSION['loggedin'] || $_SESSION['loggedin']!=true){
   header("location: login.php");
-  exit();
+  exit;
 }
 ?>
 
@@ -22,7 +22,15 @@ if(!$_SESSION['loggedin'] || $_SESSION['loggedin']!=true){
   <?php
 require 'partials/_nav.php';
   ?>
-Welcome - <?php echo $_SESSION['username'] ?>
+<div class="container my-3">
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome - <?php echo $_SESSION['username'] ?>
+</h4>
+  <p>Welcome to iSecure. You are logged in as <b><?php echo $_SESSION['username'] ?> </b style="background:red"></p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to logout <a href="/loginsystem/logout.php" class="h"> using this link.</a></p>
+</div> 
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
